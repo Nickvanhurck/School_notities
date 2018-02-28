@@ -3,7 +3,7 @@
 ## routing
 
 ### routingtabellen bijwerken
-(configuring iptablel for dns: https://opensource.com/article/17/4/build-your-own-name-server)  
+(configuring iptable for dns: https://opensource.com/article/17/4/build-your-own-name-server)  
 
 ### routingprotocol: RIP
 #### Linux (volgend labo op 01/03)
@@ -11,19 +11,21 @@
 `route -n`: geeft routing tabel   
 `route del -net ip_addr`: verwijderd route, ip_addr (172.16.0.0/20)  
 `route add -net ip_addr dev eth2`: voegt route toe, ip_addr (172.16.0.0/20)    
-`route add -net 4.0.0.0/8 gw 172.16.0.4`: route toevoegen naar router    
+`route add -net 4.0.0.0/8 gw 172.16.0.4`: route toevoegen naar router  -(gw=gateway)   
 `ping ip_addr`: kijken of je deze kan bereiken.
 
-`ip r`: routing tabel   
+`ip r`: routing tabel (ip r=ip route)   
 `ip r d ip_addr`: verwijderd route  
 `ip r a ip_addr`: voegt route toe  
-`ip r a ip_addr via ip_addr`: zelfde als gw  
+`ip r a ip_addr via ip_addr`: zelfde als gateway(gw)  
 `ip r r ip_addr via ip_addr`: past route aan (kan ook voor toevoegen gebruiken, aangeraden)   
-`ip r f root ip_addr`: alle subnetten die deel uitmaken van ht ip_addr worden verwijderd. Rechtstreeks aangesloten routes worden hier ook verwijderd.
+`ip r f root ip_addr`: alle subnetten die deel uitmaken van het ip_addr worden verwijderd. Rechtstreeks aangesloten routes worden hier ook verwijderd.
+
+`0.0.0.0/0`: (representeert alle netwerken)
 
 Als je berichten stuur en je krijg geen antwoord, controleren of jij niet de fout bent! --> teller van uitgaande berichten gaat niet omhoog.
 
-`traceroute/tracert`: om te zien waar je vast zit (diagnose in linux).
+`traceroute`: om te zien waar je vast zit (diagnose in linux).
 
 #### Windows
 `tracert`: om te zien waar je vast zit (diagnose in windows).
